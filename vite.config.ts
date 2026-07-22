@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Outside the Lovable sandbox (e.g. Netlify CI), build a Netlify SSR bundle.
+  // Inside Lovable, the preset is force-pinned to cloudflare-module and this is ignored.
+  nitro: { preset: "netlify" },
 });
