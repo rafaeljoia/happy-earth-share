@@ -1,0 +1,97 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Alternativa: usar GitHub diretamente (OAuth). Comente o bloco acima e descomente:
+# backend:
+#   name: github
+#   repo: rafaeljoia/happy-earth-share
+#   branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+locale: "pt"
+
+site_url: https://viverfeliz.org
+display_url: https://viverfeliz.org
+logo_url: /favicon.ico
+
+collections:
+  - name: "institucional"
+    label: "Conteúdo Institucional"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site"
+        label: "Textos do Site"
+        file: "src/content/site-data.json"
+        format: "json"
+        fields:
+          - label: "ONG"
+            name: "ong"
+            widget: "object"
+            fields:
+              - { label: "Nome", name: "nome", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "WhatsApp (com DDI)", name: "whatsapp", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Cidade", name: "cidade", widget: "string" }
+          - label: "Menu"
+            name: "menu"
+            widget: "list"
+            fields:
+              - { label: "Rótulo", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - { label: "CTA Principal", name: "ctaPrincipal", widget: "string" }
+              - { label: "CTA Secundário", name: "ctaSecundario", widget: "string" }
+          - label: "Quem Somos"
+            name: "quemSomos"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - label: "Parágrafos"
+                name: "paragrafos"
+                widget: "list"
+                field: { label: "Parágrafo", name: "texto", widget: "text" }
+              - label: "Pilares"
+                name: "pilares"
+                widget: "list"
+                fields:
+                  - { label: "Título", name: "titulo", widget: "string" }
+                  - { label: "Descrição", name: "descricao", widget: "text" }
+          - label: "Como Ajudar"
+            name: "comoAjudar"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Descrição", name: "descricao", widget: "text" }
+          - label: "Rodapé"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Sobre", name: "sobre", widget: "text" }
+              - { label: "Crédito", name: "credito", widget: "string" }
+
+  - name: "posts"
+    label: "Blog / Posts"
+    label_singular: "Post"
+    folder: "src/content/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Resumo", name: "excerpt", widget: "text" }
+      - { label: "Imagem de capa (URL)", name: "cover", widget: "string", required: false }
+      - { label: "Conteúdo (Markdown)", name: "body", widget: "markdown" }
