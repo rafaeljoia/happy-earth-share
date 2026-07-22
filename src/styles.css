@@ -240,9 +240,19 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes hero-kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+.hero-kenburns {
+  animation: hero-kenburns 7.5s ease-out forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .sunflower-spin { animation: none; }
+  .sunflower-spin,
+  .hero-kenburns { animation: none; }
   html { scroll-behavior: auto; }
 }
 
