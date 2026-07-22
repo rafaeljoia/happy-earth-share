@@ -1,0 +1,44 @@
+{
+  "ong": {
+    "nome": "ONG Viver Feliz",
+    "tagline": "Semeando alegria, colhendo transformação.",
+    "whatsapp": "5535987054358",
+    "email": "contato@viverfeliz.org",
+    "cidade": "Minas Gerais, Brasil"
+  },
+  "menu": [
+    { "label": "Início", "href": "/#inicio" },
+    { "label": "Quem Somos", "href": "/#quem-somos" },
+    { "label": "Catálogo", "href": "/#catalogo" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Depoimentos", "href": "/#depoimentos" }
+  ],
+  "hero": {
+    "eyebrow": "🌻 Feito com amor pela comunidade",
+    "titulo": "Cada planta e cada artesanato aqui carrega uma história de acolhimento.",
+    "subtitulo": "Ao levar um item para casa, você apoia diretamente as famílias atendidas pela ONG Viver Feliz. Cultive esperança com a gente.",
+    "ctaPrincipal": "Ver o catálogo",
+    "ctaSecundario": "Como ajudar"
+  },
+  "quemSomos": {
+    "titulo": "Quem somos",
+    "paragrafos": [
+      "A ONG Viver Feliz nasceu do desejo simples de transformar afeto em ação. Desde 2015, cultivamos plantas, produzimos artesanato e acolhemos famílias em situação de vulnerabilidade com escuta, dignidade e carinho.",
+      "Nossa horta comunitária e o ateliê de artesanato são mais que espaços produtivos — são lugares de reencontro. Cada muda plantada, cada peça bordada, sustenta oficinas, refeições e apoio psicológico para quem mais precisa.",
+      "Quando você adquire um item do nosso catálogo, sua contribuição vira semente. Vira sopa quente, escola de reforço, terapia em grupo e, principalmente, esperança."
+    ],
+    "pilares": [
+      { "titulo": "Acolhimento", "descricao": "Escuta ativa e apoio contínuo às famílias." },
+      { "titulo": "Natureza", "descricao": "Horta terapêutica e cultivo consciente." },
+      { "titulo": "Autonomia", "descricao": "Oficinas geram renda e protagonismo." }
+    ]
+  },
+  "comoAjudar": {
+    "titulo": "Como ajudar",
+    "descricao": "Você pode contribuir adquirindo itens do catálogo, doando materiais para as oficinas ou se voluntariando. Fale com a gente pelo WhatsApp — respondemos com alegria."
+  },
+  "footer": {
+    "sobre": "ONG Viver Feliz — semeando alegria desde 2015.",
+    "credito": "Feito com 🌻 pela comunidade Viver Feliz."
+  }
+}
