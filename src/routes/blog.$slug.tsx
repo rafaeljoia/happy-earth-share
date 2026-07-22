@@ -24,8 +24,8 @@ export const Route = createFileRoute("/blog/$slug")({
       ],
     };
   },
-  loader: ({ params }) => {
-    const post = getPostBySlug(params.slug);
+  loader: async ({ params }) => {
+    const post = await getPostBySlug(params.slug);
     if (!post) throw notFound();
     return { post };
   },

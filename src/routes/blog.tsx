@@ -12,7 +12,7 @@ export const Route = createFileRoute("/blog")({
       { property: "og:description", content: "Acompanhe mutirões, oficinas e histórias das famílias atendidas." },
     ],
   }),
-  loader: () => ({ posts: getAllPosts() }),
+  loader: async () => ({ posts: await getAllPosts() }),
   component: BlogList,
 });
 

@@ -2,9 +2,10 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { SunflowerLogo } from "./SunflowerLogo";
-import { site } from "@/lib/site-content";
+import { useSite } from "@/components/SiteProvider";
 
 export function Header() {
+  const site = useSite();
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/92 backdrop-blur-md">

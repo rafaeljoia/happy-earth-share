@@ -1,8 +1,9 @@
 import { SunflowerLogo } from "./SunflowerLogo";
-import { site } from "@/lib/site-content";
+import { useSite } from "@/components/SiteProvider";
 import { Link } from "@tanstack/react-router";
 
 export function Footer() {
+  const site = useSite();
   return (
     <footer className="border-t border-border bg-secondary/55">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-3 md:gap-8">

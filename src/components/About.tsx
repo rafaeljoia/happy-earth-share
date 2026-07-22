@@ -1,4 +1,4 @@
-import { site } from "@/lib/site-content";
+import { useSite } from "@/components/SiteProvider";
 import { HeartHandshake, Leaf, Sparkles, type LucideIcon } from "lucide-react";
 
 type PilarVisual = {
@@ -26,6 +26,7 @@ const pilarVisuals: Record<string, PilarVisual> = {
 };
 
 export function About() {
+  const site = useSite();
   return (
     <section id="quem-somos" className="section-band section-band-soft">
       <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">

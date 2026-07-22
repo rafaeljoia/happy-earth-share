@@ -1,6 +1,6 @@
 import { ArrowRight, Heart } from "lucide-react";
 import { HeroCarousel, type HeroSlide } from "./HeroCarousel";
-import { site } from "@/lib/site-content";
+import { useSite } from "@/components/SiteProvider";
 
 const slides: HeroSlide[] = [
   {
@@ -34,6 +34,7 @@ const slides: HeroSlide[] = [
 ];
 
 export function Hero() {
+  const site = useSite();
   return (
     <section
       id="inicio"

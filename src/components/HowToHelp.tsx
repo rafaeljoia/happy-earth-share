@@ -1,8 +1,9 @@
-import { site } from "@/lib/site-content";
+import { useSite } from "@/components/SiteProvider";
 import { buildContactLink } from "@/lib/whatsapp";
 import { MessageCircle } from "lucide-react";
 
 export function HowToHelp() {
+  const site = useSite();
   return (
     <section id="como-ajudar" className="section-band section-band-deep">
       <div className="mx-auto max-w-4xl px-4 py-20 md:py-24">
