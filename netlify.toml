@@ -1,0 +1,6 @@
+[build]
+  command = "bun run build"
+  # Nitro's netlify preset writes the static assets to dist/public and the
+  # serverless function to .netlify/functions-internal — Netlify picks both up
+  # automatically when publish points at dist/public.
+  publish = "dist/public"
