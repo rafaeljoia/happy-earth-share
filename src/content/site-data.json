@@ -7,11 +7,26 @@
     "cidade": "Minas Gerais, Brasil"
   },
   "menu": [
-    { "label": "Início", "href": "/#inicio" },
-    { "label": "Quem Somos", "href": "/#quem-somos" },
-    { "label": "Catálogo", "href": "/#catalogo" },
-    { "label": "Blog", "href": "/blog" },
-    { "label": "Depoimentos", "href": "/#depoimentos" }
+    {
+      "label": "Início",
+      "href": "/#inicio"
+    },
+    {
+      "label": "Quem Somos",
+      "href": "/#quem-somos"
+    },
+    {
+      "label": "Catálogo",
+      "href": "/#catalogo"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Depoimentos",
+      "href": "/#depoimentos"
+    }
   ],
   "hero": {
     "eyebrow": "🌻 Feito com amor pela comunidade",
@@ -28,9 +43,18 @@
       "Quando você adquire um item do nosso catálogo, sua contribuição vira semente. Vira sopa quente, escola de reforço, terapia em grupo e, principalmente, esperança."
     ],
     "pilares": [
-      { "titulo": "Acolhimento", "descricao": "Escuta ativa e apoio contínuo às famílias." },
-      { "titulo": "Natureza", "descricao": "Horta terapêutica e cultivo consciente." },
-      { "titulo": "Autonomia", "descricao": "Oficinas geram renda e protagonismo." }
+      {
+        "titulo": "Acolhimento",
+        "descricao": "Escuta ativa e apoio contínuo às famílias."
+      },
+      {
+        "titulo": "Natureza",
+        "descricao": "Horta terapêutica e cultivo consciente."
+      },
+      {
+        "titulo": "Autonomia",
+        "descricao": "Oficinas geram protagonismo e desenvolvem os saberes."
+      }
     ]
   },
   "comoAjudar": {
