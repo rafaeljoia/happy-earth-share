@@ -4,28 +4,32 @@ import { site } from "@/lib/site-content";
 
 const slides: HeroSlide[] = [
   {
-    src: "/hero/sunflowers-field.jpg",
-    alt: "Plantação de girassóis sob o sol",
+    src: "/hero/sunflowers-1.jpg",
+    alt: "Plantação de girassóis ao entardecer",
   },
   {
-    src: "/hero/sunflowers-path.jpg",
-    alt: "Campo de girassóis em perspectiva",
+    src: "/hero/sunflowers-2.jpg",
+    alt: "Campo de girassóis sob o céu azul",
   },
   {
-    src: "/hero/garden-hands.jpg",
-    alt: "Mãos cultivando a horta",
+    src: "/hero/sunflowers-3.jpg",
+    alt: "Fileiras de girassóis na plantação",
   },
   {
-    src: "/hero/community-garden.jpg",
-    alt: "Horta comunitária e convivência",
+    src: "/hero/sewing-1.jpg",
+    alt: "Máquina de costura em uso",
   },
   {
-    src: "/hero/farm-landscape.jpg",
-    alt: "Paisagem de cultivo e trabalho no campo",
+    src: "/hero/sewing-2.jpg",
+    alt: "Mãos costurando em máquina industrial",
   },
   {
-    src: "/hero/craft-workshop.jpg",
-    alt: "Oficina de artesanato e produção manual",
+    src: "/hero/hands-soil-1.jpg",
+    alt: "Mãos com terra e muda germinando",
+  },
+  {
+    src: "/hero/hands-soil-2.jpg",
+    alt: "Mãos segurando terra úmida",
   },
 ];
 

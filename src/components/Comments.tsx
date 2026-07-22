@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable";
 import { useAuth } from "@/hooks/useAuth";
 import { LogIn, Send, Trash2 } from "lucide-react";
 
@@ -35,10 +34,18 @@ export function Comments() {
 
   async function handleGoogle() {
     setError(null);
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/auth/callback`,
+        queryParams: {
+          prompt: "select_account",
+        },
+      },
     });
-    if (result.error) setError("Não foi possível entrar com o Google. Tente novamente.");
+    if (error) {
+      setError(error.message || "Não foi possível entrar com o Google. Tente novamente.");
+    }
   }
 
   async function submit(e: React.FormEvent) {
