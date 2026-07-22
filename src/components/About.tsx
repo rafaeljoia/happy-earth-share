@@ -1,7 +1,29 @@
 import { site } from "@/lib/site-content";
-import { HeartHandshake, Leaf, Sparkles } from "lucide-react";
+import { HeartHandshake, Leaf, Sparkles, type LucideIcon } from "lucide-react";
 
-const icons = [HeartHandshake, Leaf, Sparkles];
+type PilarVisual = {
+  icon: LucideIcon;
+  image: string;
+  imageAlt: string;
+};
+
+const pilarVisuals: Record<string, PilarVisual> = {
+  Acolhimento: {
+    icon: HeartHandshake,
+    image: "/pilares/acolhimento.jpg",
+    imageAlt: "Pessoas em momento de escuta e apoio",
+  },
+  Natureza: {
+    icon: Leaf,
+    image: "/pilares/natureza.jpg",
+    imageAlt: "Mãos cultivando plantas na horta",
+  },
+  Autonomia: {
+    icon: Sparkles,
+    image: "/pilares/autonomia.jpg",
+    imageAlt: "Oficina de produção manual e saberes",
+  },
+};
 
 export function About() {
   return (
@@ -21,24 +43,42 @@ export function About() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {site.quemSomos.pilares.map((pilar, i) => {
-            const Icon = icons[i % icons.length];
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          {site.quemSomos.pilares.map((pilar) => {
+            const visual = pilarVisuals[pilar.titulo] ?? {
+              icon: Sparkles,
+              image: "/pilares/natureza.jpg",
+              imageAlt: pilar.titulo,
+            };
+            const Icon = visual.icon;
+
             return (
-              <div
+              <article
                 key={pilar.titulo}
-                className="card-soft p-7 transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-12px_oklch(0.4_0.03_60_/0.16)]"
+                className="card-soft group overflow-hidden transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_-14px_oklch(0.4_0.03_60_/0.18)]"
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/20 text-foreground">
-                  <Icon size={20} strokeWidth={1.75} />
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                  <img
+                    src={visual.image}
+                    alt={visual.imageAlt}
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.2_0.03_55/0.35)] to-transparent" />
+                  <div className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-lg border border-white/25 bg-white/90 text-foreground shadow-sm backdrop-blur-sm">
+                    <Icon size={18} strokeWidth={1.75} />
+                  </div>
                 </div>
-                <div className="mt-5 font-display text-lg font-semibold tracking-tight">
-                  {pilar.titulo}
+
+                <div className="flex flex-col gap-2 p-5 md:p-6">
+                  <h3 className="font-display text-xl font-semibold tracking-tight">
+                    {pilar.titulo}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {pilar.descricao}
+                  </p>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {pilar.descricao}
-                </p>
-              </div>
+              </article>
             );
           })}
         </div>
