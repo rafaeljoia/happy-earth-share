@@ -74,7 +74,7 @@ function LoginForm() {
   return (
     <main className="mx-auto flex min-h-[60vh] max-w-md items-center px-4 py-16">
       <div className="card-soft w-full p-8">
-        <h1 className="font-display text-2xl font-bold">Área da equipe</h1>
+        <h1 className="font-display text-2xl font-semibold tracking-tight">Área da equipe</h1>
         <p className="mt-1 text-sm text-muted-foreground">
           {mode === "login" ? "Entre com suas credenciais." : "Crie sua conta de voluntário(a)."}
         </p>
@@ -120,7 +120,7 @@ function NoAccess({ email }: { email: string }) {
   return (
     <main className="mx-auto flex min-h-[60vh] max-w-md items-center px-4 py-16">
       <div className="card-soft w-full p-8 text-center">
-        <h1 className="font-display text-xl font-bold">Acesso pendente</h1>
+        <h1 className="font-display text-xl font-semibold tracking-tight">Acesso pendente</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Você está logado como <b>{email}</b>, mas ainda não tem permissão de administrador.
           Peça para um administrador da ONG liberar seu acesso.
@@ -167,7 +167,7 @@ function Dashboard() {
     <main className="mx-auto max-w-6xl px-4 py-10">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="font-display text-3xl font-bold">Painel da equipe</h1>
+          <h1 className="font-display text-3xl font-semibold tracking-tight">Painel da equipe</h1>
           <p className="text-sm text-muted-foreground">Gerencie o catálogo de plantas e artesanatos.</p>
         </div>
         <div className="flex gap-2">

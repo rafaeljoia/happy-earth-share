@@ -29,7 +29,7 @@
     }
   ],
   "hero": {
-    "eyebrow": "🌻 Feito com amor pela comunidade",
+    "eyebrow": "Feito com amor pela comunidade",
     "titulo": "Cada planta e cada artesanato aqui carrega uma história de acolhimento.",
     "subtitulo": "Ao levar um item para casa, você apoia diretamente as famílias atendidas pela ONG Viver Feliz. Cultive esperança com a gente.",
     "ctaPrincipal": "Ver o catálogo",
@@ -63,6 +63,6 @@
   },
   "footer": {
     "sobre": "ONG Viver Feliz — semeando alegria desde 2015.",
-    "credito": "Feito com 🌻 pela comunidade Viver Feliz."
+    "credito": "Feito com carinho pela comunidade Viver Feliz."
   }
 }

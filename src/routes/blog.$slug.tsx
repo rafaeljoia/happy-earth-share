@@ -38,27 +38,32 @@ function BlogPost() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-3xl px-4 py-12">
-        <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
+      <main className="mx-auto max-w-3xl px-4 py-16 md:py-20">
+        <Link
+          to="/blog"
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
           <ArrowLeft size={16} /> Todos os posts
         </Link>
 
-        <article className="mt-6">
-          <time className="text-sm text-muted-foreground">
+        <article className="mt-8">
+          <time className="text-sm tracking-wide text-muted-foreground">
             {new Date(post.date).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
           </time>
-          <h1 className="mt-2 text-4xl font-bold leading-tight md:text-5xl">{post.title}</h1>
+          <h1 className="mt-3 text-3xl font-semibold leading-[1.15] tracking-tight md:text-5xl">
+            {post.title}
+          </h1>
 
           {post.cover && (
             <img
               src={post.cover}
               alt={post.title}
-              className="mt-6 aspect-[16/9] w-full rounded-2xl object-cover"
+              className="mt-8 aspect-[16/9] w-full rounded-xl object-cover"
             />
           )}
 
           <div
-            className="prose-post mt-8 text-foreground/90"
+            className="prose-post mt-10"
             dangerouslySetInnerHTML={{ __html: html }}
           />
         </article>

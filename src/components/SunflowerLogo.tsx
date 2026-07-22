@@ -16,7 +16,7 @@ export function SunflowerLogo({ size = 40, className = "" }: { size?: number; cl
             cy="-18"
             rx="6"
             ry="12"
-            fill="oklch(0.86 0.16 92)"
+            fill="oklch(0.82 0.12 88)"
             transform={`rotate(${i * 30})`}
           />
         ))}

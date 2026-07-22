@@ -38,17 +38,19 @@ export function Catalog() {
 
   const filters: { key: Filter; label: string }[] = [
     { key: "todos", label: "Todos" },
-    { key: "planta", label: "🌱 Plantas" },
-    { key: "artesanato", label: "🧶 Artesanatos" },
+    { key: "planta", label: "Plantas" },
+    { key: "artesanato", label: "Artesanatos" },
   ];
 
   return (
-    <section id="catalogo" className="mx-auto max-w-6xl px-4 py-16">
-      <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-        <div>
-          <div className="chip bg-primary/30 text-primary-foreground">Catálogo</div>
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">Plantas e artesanatos com propósito</h2>
-          <p className="mt-2 max-w-2xl text-muted-foreground">
+    <section id="catalogo" className="mx-auto max-w-6xl px-4 py-20 md:py-24">
+      <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div className="max-w-2xl">
+          <div className="chip bg-secondary text-secondary-foreground">Catálogo</div>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+            Plantas e artesanatos com propósito
+          </h2>
+          <p className="mt-3 leading-relaxed text-muted-foreground">
             Cada item aqui foi cultivado ou feito à mão pelas famílias da ONG. Escolha, converse com a gente
             no WhatsApp e leve para casa um pedacinho de esperança.
           </p>
@@ -58,10 +60,10 @@ export function Catalog() {
             <button
               key={f.key}
               onClick={() => setFilter(f.key)}
-              className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
+              className={`rounded-md border px-4 py-2 text-sm font-medium transition-colors ${
                 filter === f.key
-                  ? "border-transparent bg-foreground text-background"
-                  : "border-border bg-card hover:bg-secondary"
+                  ? "border-foreground/15 bg-foreground text-background"
+                  : "border-border bg-card text-foreground/75 hover:border-foreground/20 hover:bg-secondary"
               }`}
             >
               {f.label}
@@ -79,7 +81,7 @@ export function Catalog() {
       ) : filtered.length === 0 ? (
         <p className="mt-12 text-center text-muted-foreground">Nenhum item disponível no momento.</p>
       ) : (
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((item) => (
             <ItemCard key={item.id} item={item} />
           ))}
@@ -93,36 +95,44 @@ function ItemCard({ item }: { item: Item }) {
   const isPlanta = item.tipo === "planta";
   const sold = item.status === "vendido";
   return (
-    <article className="card-soft group flex flex-col overflow-hidden transition hover:-translate-y-1">
+    <article className="card-soft group flex flex-col overflow-hidden transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_32px_-14px_oklch(0.4_0.02_60_/0.14)]">
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         {item.foto_url ? (
           <img
             src={item.foto_url}
             alt={item.nome}
-            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
             loading="lazy"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-muted-foreground">Sem foto</div>
+          <div className="flex h-full w-full items-center justify-center text-sm text-muted-foreground">
+            Sem foto
+          </div>
         )}
         <span
-          className={`chip absolute left-3 top-3 ${
-            isPlanta ? "bg-leaf text-white" : "bg-primary text-primary-foreground"
+          className={`chip absolute left-3 top-3 backdrop-blur-sm ${
+            isPlanta
+              ? "bg-leaf/90 text-white"
+              : "bg-primary/90 text-primary-foreground"
           }`}
         >
-          {isPlanta ? <Leaf size={12} /> : <Palette size={12} />}
+          {isPlanta ? <Leaf size={11} /> : <Palette size={11} />}
           {isPlanta ? "Planta" : "Artesanato"}
         </span>
         {sold && (
-          <span className="chip absolute right-3 top-3 bg-foreground text-background">Vendido</span>
+          <span className="chip absolute right-3 top-3 bg-foreground/90 text-background backdrop-blur-sm">
+            Vendido
+          </span>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-lg font-semibold">{item.nome}</h3>
-        <p className="mt-1 flex-1 text-sm text-muted-foreground">{item.descricao}</p>
-        <div className="mt-4 flex items-center justify-between">
-          <span className="font-display text-xl font-bold text-foreground">{item.preco}</span>
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <h3 className="font-display text-lg font-semibold tracking-tight">{item.nome}</h3>
+        <p className="mt-1.5 flex-1 text-sm leading-relaxed text-muted-foreground">{item.descricao}</p>
+        <div className="mt-4">
+          <span className="font-display text-xl font-semibold tracking-tight text-foreground">
+            {item.preco}
+          </span>
         </div>
         <a
           href={buildWhatsappLink(item.nome, item.tipo)}
@@ -133,9 +143,9 @@ function ItemCard({ item }: { item: Item }) {
           onClick={(e) => {
             if (sold) e.preventDefault();
           }}
-          style={sold ? { opacity: 0.5, cursor: "not-allowed" } : undefined}
+          style={sold ? { opacity: 0.45, cursor: "not-allowed" } : undefined}
         >
-          <MessageCircle size={18} /> {sold ? "Item vendido" : "Tenho Interesse"}
+          <MessageCircle size={17} /> {sold ? "Item vendido" : "Tenho Interesse"}
         </a>
       </div>
     </article>

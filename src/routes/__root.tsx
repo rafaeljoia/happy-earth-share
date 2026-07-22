@@ -19,9 +19,9 @@ function NotFoundComponent() {
       <Header />
       <div className="flex min-h-[60vh] items-center justify-center px-4">
         <div className="max-w-md text-center">
-          <h1 className="text-7xl font-bold">404</h1>
-          <p className="mt-2 text-muted-foreground">Página não encontrada.</p>
-          <a href="/" className="btn-primary mt-6 inline-flex">Voltar ao início</a>
+          <h1 className="text-6xl font-semibold tracking-tight md:text-7xl">404</h1>
+          <p className="mt-3 text-muted-foreground">Página não encontrada.</p>
+          <a href="/" className="btn-primary mt-8 inline-flex">Voltar ao início</a>
         </div>
       </div>
       <Footer />
