@@ -15,4 +15,4 @@ A cada peça vendida no catálogo, **70% do valor** vai direto para a artesã. O
 
 > "Aprendi um ofício e conheci amigas para a vida toda." — Cláudia, formanda
 
-Se você quer apoiar, dê uma olhada no nosso [catálogo](/#catalogo). Cada bolsa, cada toalha, cada sabonete carrega o carinho dessas mãos.
+Se você quer apoiar, dê uma olhada no nosso [catálogo](/catalogo). Cada bolsa, cada toalha, cada sabonete carrega o carinho dessas mãos.

@@ -17,7 +17,7 @@ export function Hero() {
             {site.hero.subtitulo}
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="#catalogo" className="btn-primary">
+            <a href="/catalogo" className="btn-primary">
               {site.hero.ctaPrincipal} <ArrowRight size={17} />
             </a>
             <a href="#como-ajudar" className="btn-leaf">
