@@ -76,9 +76,10 @@ export function Comments() {
   }
 
   return (
-    <section id="depoimentos" className="mx-auto max-w-4xl px-4 py-20 md:py-24">
+    <section id="depoimentos" className="section-band section-band-soft">
+      <div className="mx-auto max-w-4xl px-4 py-20 md:py-24">
       <div className="text-center">
-        <div className="chip bg-secondary text-secondary-foreground">Depoimentos</div>
+        <div className="chip bg-card text-secondary-foreground">Depoimentos</div>
         <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
           Recados da comunidade
         </h2>
@@ -187,6 +188,7 @@ export function Comments() {
           </li>
         ))}
       </ul>
+      </div>
     </section>
   );
 }

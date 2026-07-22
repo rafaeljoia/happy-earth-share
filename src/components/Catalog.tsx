@@ -43,10 +43,11 @@ export function Catalog() {
   ];
 
   return (
-    <section id="catalogo" className="mx-auto max-w-6xl px-4 py-20 md:py-24">
+    <section id="catalogo" className="section-band section-band-warm">
+      <div className="mx-auto max-w-6xl px-4 py-20 md:py-24">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <div className="max-w-2xl">
-          <div className="chip bg-secondary text-secondary-foreground">Catálogo</div>
+          <div className="chip bg-card text-secondary-foreground">Catálogo</div>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
             Plantas e artesanatos com propósito
           </h2>
@@ -87,6 +88,7 @@ export function Catalog() {
           ))}
         </div>
       )}
+      </div>
     </section>
   );
 }

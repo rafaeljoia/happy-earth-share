@@ -7,7 +7,7 @@ import { site } from "@/lib/site-content";
 export function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border/50 bg-background/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/92 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 md:py-4">
         <Link to="/" className="flex items-center gap-2.5">
           <SunflowerLogo size={36} />

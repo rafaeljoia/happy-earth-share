@@ -23,7 +23,7 @@ function BlogList() {
       <Header />
       <main className="mx-auto max-w-6xl px-4 py-20 md:py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="chip bg-secondary text-secondary-foreground">Blog</div>
+          <div className="chip bg-primary/25 text-primary-foreground">Blog</div>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">
             Histórias que florescem
           </h1>
