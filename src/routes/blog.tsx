@@ -31,7 +31,7 @@ function BlogList() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+          {posts.map((post: { slug: string; title: string; date: string; excerpt: string; cover?: string }) => (
             <Link
               key={post.slug}
               to="/blog/$slug"

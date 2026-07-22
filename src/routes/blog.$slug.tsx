@@ -7,7 +7,7 @@ import { ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
-    const post = loaderData?.post;
+    const post = (loaderData as { post?: { title: string; excerpt: string; cover?: string } } | undefined)?.post;
     if (!post) {
       return { meta: [{ title: "Post não encontrado" }, { name: "robots", content: "noindex" }] };
     }
