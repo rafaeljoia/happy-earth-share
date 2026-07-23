@@ -10,5 +10,9 @@ expertMode = true
 runButton = "Project"
 
 [[ports]]
+localPort = 8080
+externalPort = 8080
+
+[[ports]]
 localPort = 23636
 externalPort = 80

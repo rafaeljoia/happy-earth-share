@@ -15,4 +15,8 @@ export default defineConfig({
   // Outside the Lovable sandbox (e.g. Netlify CI), build a Netlify SSR bundle.
   // Inside Lovable, the preset is force-pinned to cloudflare-module and this is ignored.
   nitro: { preset: "netlify" },
+  // In the Replit container IPv6 is unsupported, so bind the dev server to IPv4.
+  vite: {
+    server: { host: "0.0.0.0" },
+  },
 });
