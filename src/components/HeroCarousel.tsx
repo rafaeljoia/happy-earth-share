@@ -54,8 +54,8 @@ export function HeroCarousel({ slides, intervalMs = 6500 }: Props) {
         </div>
       ))}
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.03_55/0.82)] via-[oklch(0.2_0.03_55/0.55)] to-[oklch(0.25_0.03_55/0.22)]" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[oklch(0.16_0.03_55/0.55)] via-transparent to-[oklch(0.2_0.02_55/0.25)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[oklch(0.22_0.05_150/0.88)] via-[oklch(0.25_0.05_150/0.62)] to-[oklch(0.28_0.045_150/0.28)]" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[oklch(0.2_0.045_150/0.7)] via-transparent to-[oklch(0.24_0.04_150/0.35)]" />
 
       <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 gap-2 md:bottom-8">
         {slides.map((slide, i) => (
@@ -66,7 +66,7 @@ export function HeroCarousel({ slides, intervalMs = 6500 }: Props) {
             onClick={() => setIndex(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
               i === index
-                ? "w-8 bg-primary"
+                ? "w-8 bg-sun"
                 : "w-1.5 bg-white/45 hover:bg-white/70"
             }`}
           />

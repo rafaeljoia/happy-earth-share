@@ -34,7 +34,7 @@ export function Comments() {
 
   async function handleGoogle() {
     setError(null);
-    const { error } = await supabase.auth.signInWithOAuth({
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
         redirectTo: `${window.location.origin}/auth/callback`,
@@ -44,7 +44,18 @@ export function Comments() {
       },
     });
     if (error) {
-      setError(error.message || "Não foi possível entrar com o Google. Tente novamente.");
+      const msg = error.message || "";
+      if (/provider is not enabled|unsupported provider/i.test(msg)) {
+        setError(
+          "Login com Google ainda não está habilitado no Supabase. Ative o provider Google em Authentication > Providers.",
+        );
+      } else {
+        setError(msg || "Não foi possível entrar com o Google. Tente novamente.");
+      }
+      return;
+    }
+    if (!data?.url) {
+      setError("Não foi possível iniciar o login com o Google. Tente novamente.");
     }
   }
 

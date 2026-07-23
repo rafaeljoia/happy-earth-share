@@ -37,6 +37,8 @@
   --color-sun: var(--sun);
   --color-leaf: var(--leaf);
   --color-leaf-soft: var(--leaf-soft);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
 }
@@ -44,42 +46,46 @@
 :root {
   --radius: 0.75rem;
 
-  --background: oklch(0.985 0.01 85);
-  --foreground: oklch(0.24 0.025 50);
+  --background: oklch(0.985 0.008 95);
+  --foreground: oklch(0.22 0.03 150);
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.025 50);
+  --card-foreground: oklch(0.22 0.03 150);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.025 50);
+  --popover-foreground: oklch(0.22 0.03 150);
 
-  --primary: oklch(0.8 0.14 88);
-  --primary-foreground: oklch(0.24 0.045 55);
+  --primary: oklch(0.82 0.14 88);
+  --primary-foreground: oklch(0.22 0.04 55);
 
-  --secondary: oklch(0.93 0.035 95);
-  --secondary-foreground: oklch(0.3 0.035 65);
+  --secondary: oklch(0.94 0.02 145);
+  --secondary-foreground: oklch(0.28 0.04 150);
 
-  --muted: oklch(0.95 0.015 85);
-  --muted-foreground: oklch(0.42 0.025 55);
+  --muted: oklch(0.95 0.012 140);
+  --muted-foreground: oklch(0.42 0.03 150);
 
-  --accent: oklch(0.91 0.045 100);
-  --accent-foreground: oklch(0.28 0.035 75);
+  --accent: oklch(0.93 0.03 100);
+  --accent-foreground: oklch(0.26 0.04 150);
 
   --destructive: oklch(0.55 0.18 25);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.86 0.02 85);
-  --input: oklch(0.9 0.015 85);
+  --border: oklch(0.88 0.015 140);
+  --input: oklch(0.92 0.012 140);
   --ring: oklch(0.7 0.1 88);
 
-  --sun: oklch(0.8 0.14 88);
-  --leaf: oklch(0.48 0.1 150);
-  --leaf-soft: oklch(0.9 0.05 140);
+  --sun: oklch(0.82 0.14 88);
+  --leaf: oklch(0.42 0.09 150);
+  --leaf-soft: oklch(0.92 0.04 145);
+  --forest: oklch(0.28 0.05 150);
+  --forest-deep: oklch(0.22 0.045 150);
   --whatsapp: oklch(0.55 0.15 150);
   --whatsapp-foreground: oklch(0.99 0 0);
 
-  --band-warm: oklch(0.96 0.03 88);
-  --band-soft: oklch(0.955 0.025 110);
-  --band-deep: oklch(0.935 0.04 95);
+  --band-warm: oklch(0.97 0.02 100);
+  --band-soft: oklch(0.97 0.015 145);
+  --band-deep: oklch(0.28 0.05 150);
+
+  --sunflower-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23f0c84a' stroke-opacity='0.11' stroke-width='1.2'%3E%3Ccircle cx='36' cy='36' r='4'/%3E%3Cg transform='translate(36 36)'%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9'/%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9' transform='rotate(45)'/%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9' transform='rotate(90)'/%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9' transform='rotate(135)'/%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9' transform='rotate(180)'/%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9' transform='rotate(225)'/%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9' transform='rotate(270)'/%3E%3Cellipse cx='0' cy='-14' rx='4' ry='9' transform='rotate(315)'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 @layer base {
@@ -90,8 +96,8 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     background-image:
-      radial-gradient(ellipse 80% 50% at 0% 0%, oklch(0.94 0.03 100 / 0.45), transparent 55%),
-      radial-gradient(ellipse 60% 40% at 100% 0%, oklch(0.94 0.04 88 / 0.3), transparent 50%);
+      radial-gradient(ellipse 70% 45% at 0% 0%, oklch(0.94 0.03 145 / 0.35), transparent 55%),
+      radial-gradient(ellipse 50% 35% at 100% 0%, oklch(0.95 0.04 88 / 0.22), transparent 50%);
     background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
   }
@@ -213,6 +219,24 @@
 @utility section-band-deep {
   background:
     linear-gradient(160deg, var(--band-deep) 0%, oklch(0.95 0.045 88) 55%, oklch(0.96 0.03 110) 100%);
+}
+
+@utility section-band-forest {
+  border-block-color: oklch(0.32 0.05 150 / 0.6);
+  background-color: var(--forest);
+  background-image: var(--sunflower-pattern);
+  background-size: 72px 72px;
+  color: oklch(0.97 0.01 95);
+}
+
+@utility surface-forest {
+  background-color: var(--forest);
+  color: oklch(0.97 0.01 95);
+}
+
+@utility surface-forest-deep {
+  background-color: var(--forest-deep);
+  color: oklch(0.97 0.01 95);
 }
 
 @utility reveal {
