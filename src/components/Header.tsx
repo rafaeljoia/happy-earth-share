@@ -2,60 +2,69 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { SunflowerLogo } from "./SunflowerLogo";
-import { site } from "@/lib/site-content";
+import { useSite } from "@/components/SiteProvider";
 
 export function Header() {
+  const site = useSite();
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <SunflowerLogo size={40} />
+    <header className="sticky top-0 z-40 border-b border-border bg-background/92 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 md:py-4">
+        <Link to="/" className="flex items-center gap-2.5">
+          <SunflowerLogo size={36} />
           <div className="leading-tight">
-            <div className="font-display text-lg font-bold">ONG Viver Feliz</div>
-            <div className="text-xs text-muted-foreground">{site.ong.tagline}</div>
+            <div className="font-display text-base font-semibold tracking-tight md:text-lg">
+              ONG Viver Feliz
+            </div>
+            <div className="hidden text-[0.7rem] text-muted-foreground sm:block">
+              {site.ong.tagline}
+            </div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="hidden items-center gap-0.5 md:flex">
           {site.menu.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition hover:bg-secondary hover:text-foreground"
+              className="px-3.5 py-2 text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
           ))}
-          <a href="/#como-ajudar" className="btn-primary ml-2 !py-2 !px-4 text-sm">
-            <Heart size={16} /> Como Ajudar
+          <a href="/#como-ajudar" className="btn-primary ml-3 !px-4 !py-2 text-sm">
+            <Heart size={15} strokeWidth={2} /> Como Ajudar
           </a>
         </nav>
 
         <button
-          className="rounded-full p-2 md:hidden"
+          className="rounded-md p-2 text-foreground/80 transition-colors hover:bg-secondary md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Menu"
         >
-          {open ? <X /> : <Menu />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <nav className="border-t border-border/60 bg-background md:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3">
+        <nav className="border-t border-border/50 bg-background md:hidden">
+          <div className="mx-auto flex max-w-6xl flex-col gap-0.5 px-4 py-3">
             {site.menu.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-secondary"
+                className="rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
               >
                 {item.label}
               </a>
             ))}
-            <a href="/#como-ajudar" onClick={() => setOpen(false)} className="btn-primary mt-2 text-sm">
-              <Heart size={16} /> Como Ajudar
+            <a
+              href="/#como-ajudar"
+              onClick={() => setOpen(false)}
+              className="btn-primary mt-2 text-sm"
+            >
+              <Heart size={15} /> Como Ajudar
             </a>
           </div>
         </nav>

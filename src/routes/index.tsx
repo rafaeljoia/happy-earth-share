@@ -26,7 +26,7 @@ function Index() {
       <main>
         <Hero />
         <About />
-        <Catalog />
+        <Catalog variant="preview" previewLimit={3} />
         <HowToHelp />
         <Comments />
       </main>

@@ -1,10 +1,18 @@
-export function SunflowerLogo({ size = 40, className = "" }: { size?: number; className?: string }) {
+export function SunflowerLogo({
+  size = 40,
+  className = "",
+  animated = false,
+}: {
+  size?: number;
+  className?: string;
+  animated?: boolean;
+}) {
   return (
     <svg
       viewBox="0 0 64 64"
       width={size}
       height={size}
-      className={className}
+      className={`${animated ? "sunflower-spin" : ""} ${className}`.trim()}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -16,7 +24,7 @@ export function SunflowerLogo({ size = 40, className = "" }: { size?: number; cl
             cy="-18"
             rx="6"
             ry="12"
-            fill="oklch(0.86 0.16 92)"
+            fill="oklch(0.8 0.14 88)"
             transform={`rotate(${i * 30})`}
           />
         ))}

@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SiteProvider } from "@/components/SiteProvider";
 
 function NotFoundComponent() {
   return (
@@ -19,9 +20,9 @@ function NotFoundComponent() {
       <Header />
       <div className="flex min-h-[60vh] items-center justify-center px-4">
         <div className="max-w-md text-center">
-          <h1 className="text-7xl font-bold">404</h1>
-          <p className="mt-2 text-muted-foreground">Página não encontrada.</p>
-          <a href="/" className="btn-primary mt-6 inline-flex">Voltar ao início</a>
+          <h1 className="text-6xl font-semibold tracking-tight md:text-7xl">404</h1>
+          <p className="mt-3 text-muted-foreground">Página não encontrada.</p>
+          <a href="/" className="btn-primary mt-8 inline-flex">Voltar ao início</a>
         </div>
       </div>
       <Footer />
@@ -81,8 +82,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <head><HeadContent /></head>
-      <body>{children}<Scripts /></body>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
     </html>
   );
 }
@@ -91,7 +97,9 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <SiteProvider>
+        <Outlet />
+      </SiteProvider>
     </QueryClientProvider>
   );
 }
