@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { getAllPosts } from "@/lib/site-content";
+import { getAllPosts, type Post } from "@/lib/site-content";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -33,7 +33,7 @@ function BlogList() {
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post: { slug: string; title: string; date: string; excerpt: string; cover?: string }) => (
+          {posts.map((post: Post) => (
             <Link
               key={post.slug}
               to="/blog/$slug"

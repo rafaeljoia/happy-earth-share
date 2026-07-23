@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { getPostBySlug } from "@/lib/site-content";
+import { getPostBySlug, type Post } from "@/lib/site-content";
 import { renderMarkdown } from "@/lib/markdown";
 import { ArrowLeft } from "lucide-react";
 
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function BlogPost() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: Post };
   const html = renderMarkdown(post.content);
   return (
     <>
